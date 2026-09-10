@@ -1,0 +1,72 @@
+2026-09-09 08:51:36 [main] INFO  org.example.Main - Footprint de un nodo Pokemon:
+org.example.Model.Pokemon object internals:
+OFF  SZ                        TYPE DESCRIPTION                    VALUE
+  0   8                             (object header: mark)          0x0000000000000009 (non-biasable; age: 1)
+  8   4                             (object header: class)         0x00d02000
+ 12   4                         int Pokemon.puntosDeVidaMaximos    39
+ 16   4                         int Pokemon.ataque                 52
+ 20   4                         int Pokemon.defensa                43
+ 24   4                         int Pokemon.experienciaRequerida   1500
+ 28   4            java.lang.String Pokemon.nombre                 (object)
+ 32   4   org.example.Model.Pokemon Pokemon.evolucionSiguiente     (object)
+ 36   4                             (object alignment gap)         
+Instance size: 40 bytes
+Space losses: 0 bytes internal + 4 bytes external = 4 bytes total
+
+2026-09-09 08:51:36 [main] INFO  org.example.Main - Footprint de LineaEvolutiva:
+org.example.Model.LineaEvolutiva object internals:
+OFF  SZ                        TYPE DESCRIPTION                           VALUE
+  0   8                             (object header: mark)                 0x0000000000000009 (non-biasable; age: 1)
+  8   4                             (object header: class)                0x00d02448
+ 12   4                         int LineaEvolutiva.experienciaAcumulada   0
+ 16   4   org.example.Model.Pokemon LineaEvolutiva.faseActual             (object)
+ 20   4                             (object alignment gap)                
+Instance size: 24 bytes
+Space losses: 0 bytes internal + 4 bytes external = 4 bytes total
+
+2026-09-09 08:51:36 [main] INFO  org.example.Main - ---Prueba unitaria: Charmander vs Rattata---
+2026-09-09 08:51:36 [main] INFO  org.example.Service.EntrenamientoMasivo - Turno 1 - Charmander ataca. Daño: 17 | Rattata HP: 13
+2026-09-09 08:51:36 [main] INFO  org.example.Service.EntrenamientoMasivo - Turno 1 - Rattata ataca. Daño: 13 | Charmander HP: 26
+2026-09-09 08:51:36 [main] INFO  org.example.Service.EntrenamientoMasivo - Turno 2 - Charmander ataca. Daño: 17 | Rattata HP: 0
+2026-09-09 08:51:36 [main] INFO  org.example.Main - XP acumulada: 50
+2026-09-09 08:51:36 [main] INFO  org.example.Main - Fase actual: Charmander
+2026-09-09 08:51:36 [main] INFO  org.example.Main - ---Prueba de estrés: entrenamiento masivo---
+2026-09-09 08:51:37 [main] INFO  org.example.Main - Fase final: Charizard
+2026-09-09 08:51:37 [main] INFO  org.example.Main - XP final acumulada: 5000000
+2026-09-09 12:49:59 [main] INFO  org.example.Main - Pokemon:
+org.example.Model.Pokemon object internals:
+OFF  SZ                        TYPE DESCRIPTION                    VALUE
+  0   8                             (object header: mark)          0x0000000000000009 (non-biasable; age: 1)
+  8   4                             (object header: class)         0x011034d8
+ 12   4                         int Pokemon.puntosDeVidaMaximos    39
+ 16   4                         int Pokemon.ataque                 52
+ 20   4                         int Pokemon.defensa                43
+ 24   4                         int Pokemon.experienciaRequerida   1500
+ 28   4            java.lang.String Pokemon.nombre                 (object)
+ 32   4   org.example.Model.Pokemon Pokemon.evolucionSiguiente     (object)
+ 36   4                             (object alignment gap)         
+Instance size: 40 bytes
+Space losses: 0 bytes internal + 4 bytes external = 4 bytes total
+
+2026-09-09 12:49:59 [main] INFO  org.example.Main - LineaEvolutiva:
+org.example.Model.LineaEvolutiva object internals:
+OFF  SZ                        TYPE DESCRIPTION                           VALUE
+  0   8                             (object header: mark)                 0x0000000000000009 (non-biasable; age: 1)
+  8   4                             (object header: class)                0x01103920
+ 12   4                         int LineaEvolutiva.experienciaAcumulada   0
+ 16   4   org.example.Model.Pokemon LineaEvolutiva.faseActual             (object)
+ 20   4                             (object alignment gap)                
+Instance size: 24 bytes
+Space losses: 0 bytes internal + 4 bytes external = 4 bytes total
+
+2026-09-09 12:49:59 [main] INFO  org.example.Main - ---Prueba unitaria: Charmander vs Rattata---
+2026-09-09 12:49:59 [main] INFO  org.example.Service.EntrenamientoMasivo - Turno 1 - Charmander ataca. Daño: 17 | Rattata HP: 13
+2026-09-09 12:49:59 [main] INFO  org.example.Service.EntrenamientoMasivo - Turno 1 - Rattata ataca. Daño: 13 | Charmander HP: 26
+2026-09-09 12:49:59 [main] INFO  org.example.Service.EntrenamientoMasivo - Turno 2 - Charmander ataca. Daño: 17 | Rattata HP: 0
+2026-09-09 12:49:59 [main] INFO  org.example.Main - XP acumulada: 50
+2026-09-09 12:49:59 [main] INFO  org.example.Main - Fase actual: Charmander
+2026-09-09 12:49:59 [main] INFO  org.example.Main - ---Prueba de estrés: entrenamiento masivo---
+2026-09-09 12:50:01 [main] INFO  org.example.Model.LineaEvolutiva - Enemigo #30 -> XP: 1500 -> Evolucion: Charmeleon
+2026-09-09 12:50:01 [main] INFO  org.example.Model.LineaEvolutiva - Enemigo #100 -> XP: 5000 -> Evolucion: Charizard
+2026-09-09 12:50:01 [main] INFO  org.example.Main - Fase final: Charizard
+2026-09-09 12:50:01 [main] INFO  org.example.Main - XP final acumulada: 5000000

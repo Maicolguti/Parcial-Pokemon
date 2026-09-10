@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org</span><span class="s2">.</span><span class="s1">example</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">Model</span><span class="s2">.</span><span class="s1">Pokemon</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">Model</span><span class="s2">.</span><span class="s1">LineaEvolutiva</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">Service</span><span class="s2">.</span><span class="s1">EntrenamientoMasivo</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Random</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Main </span><span class="s2">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+
+        <span class="s3">// ============================================</span>
+        <span class="s3">// 1. CREAR LA CADENA EVOLUTIVA</span>
+        <span class="s3">// Se crean los 3 nodos y se enlazan entre sí.</span>
+        <span class="s3">// ============================================</span>
+        <span class="s1">Pokemon charizard </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Pokemon</span><span class="s2">(</span><span class="s4">&quot;Charizard&quot;</span><span class="s2">, </span><span class="s5">78</span><span class="s2">, </span><span class="s5">84</span><span class="s2">, </span><span class="s5">78</span><span class="s2">, -</span><span class="s5">1</span><span class="s2">);</span>
+        <span class="s1">Pokemon charmeleon </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Pokemon</span><span class="s2">(</span><span class="s4">&quot;Charmeleon&quot;</span><span class="s2">, </span><span class="s5">58</span><span class="s2">, </span><span class="s5">64</span><span class="s2">, </span><span class="s5">58</span><span class="s2">, </span><span class="s5">5000</span><span class="s2">);</span>
+        <span class="s1">Pokemon charmander </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Pokemon</span><span class="s2">(</span><span class="s4">&quot;Charmander&quot;</span><span class="s2">, </span><span class="s5">39</span><span class="s2">, </span><span class="s5">52</span><span class="s2">, </span><span class="s5">43</span><span class="s2">, </span><span class="s5">1500</span><span class="s2">);</span>
+
+        <span class="s1">charmander</span><span class="s2">.</span><span class="s1">setEvolucionSiguiente</span><span class="s2">(</span><span class="s1">charmeleon</span><span class="s2">);</span>
+        <span class="s1">charmeleon</span><span class="s2">.</span><span class="s1">setEvolucionSiguiente</span><span class="s2">(</span><span class="s1">charizard</span><span class="s2">);</span>
+
+        <span class="s3">// ============================================</span>
+        <span class="s3">// 2. PRUEBA UNITARIA: Charmander vs Rattata</span>
+        <span class="s3">// ============================================</span>
+        <span class="s1">LineaEvolutiva miPokemonPrueba </span><span class="s2">= </span><span class="s0">new </span><span class="s1">LineaEvolutiva</span><span class="s2">(</span><span class="s1">charmander</span><span class="s2">);</span>
+        <span class="s1">Pokemon rattata </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Pokemon</span><span class="s2">(</span><span class="s4">&quot;Rattata&quot;</span><span class="s2">, </span><span class="s5">30</span><span class="s2">, </span><span class="s5">56</span><span class="s2">, </span><span class="s5">35</span><span class="s2">, -</span><span class="s5">1</span><span class="s2">);</span>
+
+        <span class="s0">int </span><span class="s1">hpRattata </span><span class="s2">= </span><span class="s1">rattata</span><span class="s2">.</span><span class="s1">getPuntosDeVidaMaximos</span><span class="s2">();</span>
+        <span class="s0">int </span><span class="s1">hpCharmander </span><span class="s2">= </span><span class="s1">miPokemonPrueba</span><span class="s2">.</span><span class="s1">getFaseActual</span><span class="s2">().</span><span class="s1">getPuntosDeVidaMaximos</span><span class="s2">();</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;=== Prueba unitaria: Charmander vs Rattata ===&quot;</span><span class="s2">);</span>
+
+        <span class="s0">int </span><span class="s1">danio1 </span><span class="s2">= </span><span class="s1">Math</span><span class="s2">.</span><span class="s1">max</span><span class="s2">(</span><span class="s5">1</span><span class="s2">, </span><span class="s1">miPokemonPrueba</span><span class="s2">.</span><span class="s1">getFaseActual</span><span class="s2">().</span><span class="s1">getAtaque</span><span class="s2">() - </span><span class="s1">rattata</span><span class="s2">.</span><span class="s1">getDefensa</span><span class="s2">());</span>
+        <span class="s1">hpRattata </span><span class="s2">-= </span><span class="s1">danio1</span><span class="s2">;</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Turno 1 - Charmander ataca. Daño: &quot; </span><span class="s2">+ </span><span class="s1">danio1 </span><span class="s2">+ </span><span class="s4">&quot; | Rattata HP: &quot; </span><span class="s2">+ </span><span class="s1">hpRattata</span><span class="s2">);</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">hpRattata </span><span class="s2">&gt; </span><span class="s5">0</span><span class="s2">) {</span>
+            <span class="s0">int </span><span class="s1">danio2 </span><span class="s2">= </span><span class="s1">Math</span><span class="s2">.</span><span class="s1">max</span><span class="s2">(</span><span class="s5">1</span><span class="s2">, </span><span class="s1">rattata</span><span class="s2">.</span><span class="s1">getAtaque</span><span class="s2">() - </span><span class="s1">miPokemonPrueba</span><span class="s2">.</span><span class="s1">getFaseActual</span><span class="s2">().</span><span class="s1">getDefensa</span><span class="s2">());</span>
+            <span class="s1">hpCharmander </span><span class="s2">-= </span><span class="s1">danio2</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Turno 2 - Rattata ataca. Daño: &quot; </span><span class="s2">+ </span><span class="s1">danio2 </span><span class="s2">+ </span><span class="s4">&quot; | Charmander HP: &quot; </span><span class="s2">+ </span><span class="s1">hpCharmander</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">hpRattata </span><span class="s2">&gt; </span><span class="s5">0</span><span class="s2">) {</span>
+            <span class="s0">int </span><span class="s1">danio3 </span><span class="s2">= </span><span class="s1">Math</span><span class="s2">.</span><span class="s1">max</span><span class="s2">(</span><span class="s5">1</span><span class="s2">, </span><span class="s1">miPokemonPrueba</span><span class="s2">.</span><span class="s1">getFaseActual</span><span class="s2">().</span><span class="s1">getAtaque</span><span class="s2">() - </span><span class="s1">rattata</span><span class="s2">.</span><span class="s1">getDefensa</span><span class="s2">());</span>
+            <span class="s1">hpRattata </span><span class="s2">-= </span><span class="s1">danio3</span><span class="s2">;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Turno 3 - Charmander ataca. Daño: &quot; </span><span class="s2">+ </span><span class="s1">danio3 </span><span class="s2">+ </span><span class="s4">&quot; | Rattata HP: &quot; </span><span class="s2">+ </span><span class="s1">hpRattata</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">hpRattata </span><span class="s2">&lt;= </span><span class="s5">0</span><span class="s2">) {</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;¡Charmander ganó la batalla!&quot;</span><span class="s2">);</span>
+            <span class="s1">miPokemonPrueba</span><span class="s2">.</span><span class="s1">ganarExperiencia</span><span class="s2">(</span><span class="s5">50</span><span class="s2">);</span>
+            <span class="s1">miPokemonPrueba</span><span class="s2">.</span><span class="s1">mecanismoEvolucion</span><span class="s2">();</span>
+        <span class="s2">}</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;XP acumulada: &quot; </span><span class="s2">+ </span><span class="s1">miPokemonPrueba</span><span class="s2">.</span><span class="s1">getExperienciaAcumulada</span><span class="s2">());</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Fase actual: &quot; </span><span class="s2">+ </span><span class="s1">miPokemonPrueba</span><span class="s2">.</span><span class="s1">getFaseActual</span><span class="s2">().</span><span class="s1">getNombre</span><span class="s2">());</span>
+
+        <span class="s3">// ============================================</span>
+        <span class="s3">// 3. PRUEBA DE ESTRÉS: horda de 100,000 Caterpie generados aleatoriamente</span>
+        <span class="s3">// ============================================</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">=== Prueba de estrés: entrenamiento masivo ===&quot;</span><span class="s2">);</span>
+
+        <span class="s3">// LineaEvolutiva NUEVA para esta prueba, con XP en 0</span>
+        <span class="s1">LineaEvolutiva miPokemonEntrenamiento </span><span class="s2">= </span><span class="s0">new </span><span class="s1">LineaEvolutiva</span><span class="s2">(</span><span class="s1">charmander</span><span class="s2">);</span>
+
+        <span class="s3">// Random genera los números aleatorios para cada Caterpie</span>
+        <span class="s1">Random random </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Random</span><span class="s2">();</span>
+        <span class="s1">Pokemon</span><span class="s2">[] </span><span class="s1">hordaEnemigos </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Pokemon</span><span class="s2">[</span><span class="s5">100000</span><span class="s2">];</span>
+
+        <span class="s0">for </span><span class="s2">(</span><span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s5">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">hordaEnemigos</span><span class="s2">.</span><span class="s1">length</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) {</span>
+            <span class="s3">// random.nextInt(21) da un número entre 0 y 20; sumando el mínimo</span>
+            <span class="s3">// desplazamos ese rango a donde queremos (ej: 30 a 50)</span>
+            <span class="s0">int </span><span class="s1">hpAleatorio </span><span class="s2">= </span><span class="s5">30 </span><span class="s2">+ </span><span class="s1">random</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">(</span><span class="s5">21</span><span class="s2">);       </span><span class="s3">// entre 30 y 50</span>
+            <span class="s0">int </span><span class="s1">ataqueAleatorio </span><span class="s2">= </span><span class="s5">20 </span><span class="s2">+ </span><span class="s1">random</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">(</span><span class="s5">16</span><span class="s2">);   </span><span class="s3">// entre 20 y 35</span>
+            <span class="s0">int </span><span class="s1">defensaAleatoria </span><span class="s2">= </span><span class="s5">20 </span><span class="s2">+ </span><span class="s1">random</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">(</span><span class="s5">21</span><span class="s2">);  </span><span class="s3">// entre 20 y 40</span>
+
+            <span class="s1">hordaEnemigos</span><span class="s2">[</span><span class="s1">i</span><span class="s2">] = </span><span class="s0">new </span><span class="s1">Pokemon</span><span class="s2">(</span><span class="s4">&quot;Caterpie&quot;</span><span class="s2">, </span><span class="s1">hpAleatorio</span><span class="s2">, </span><span class="s1">ataqueAleatorio</span><span class="s2">, </span><span class="s1">defensaAleatoria</span><span class="s2">, -</span><span class="s5">1</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+        <span class="s3">// Ejecutamos el entrenamiento masivo</span>
+        <span class="s1">EntrenamientoMasivo entrenamiento </span><span class="s2">= </span><span class="s0">new </span><span class="s1">EntrenamientoMasivo</span><span class="s2">();</span>
+        <span class="s1">entrenamiento</span><span class="s2">.</span><span class="s1">iniciarEntrenamientoMasivo</span><span class="s2">(</span><span class="s1">miPokemonEntrenamiento</span><span class="s2">, </span><span class="s1">hordaEnemigos</span><span class="s2">);</span>
+
+        <span class="s3">// Resultado final, después de las 100,000 batallas</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Fase final tras el entrenamiento: &quot; </span><span class="s2">+ </span><span class="s1">miPokemonEntrenamiento</span><span class="s2">.</span><span class="s1">getFaseActual</span><span class="s2">().</span><span class="s1">getNombre</span><span class="s2">());</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;XP final acumulada: &quot; </span><span class="s2">+ </span><span class="s1">miPokemonEntrenamiento</span><span class="s2">.</span><span class="s1">getExperienciaAcumulada</span><span class="s2">());</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
