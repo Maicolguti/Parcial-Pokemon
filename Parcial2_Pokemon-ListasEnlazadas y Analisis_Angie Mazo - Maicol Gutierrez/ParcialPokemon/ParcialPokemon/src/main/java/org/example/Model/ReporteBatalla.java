@@ -7,11 +7,10 @@ public class ReporteBatalla {
     private String nombreEnemigo;
     private int cantidadDerrotados;
 
-    public ReporteBatalla (String nombreMipokemon, String nombreEnemigo, int CantidadDerrotados) {
-
-    this.nombreMiPokemon=getNombreMiPokemon();
-    this.nombreEnemigo=getNombreEnemigo();
-    this.cantidadDerrotados=getCantidadDerrotados();
+    public ReporteBatalla(String nombreMiPokemon, String nombreEnemigo, int cantidadDerrotados) {
+        this.nombreMiPokemon = nombreMiPokemon;
+        this.nombreEnemigo = nombreEnemigo;
+        this.cantidadDerrotados = cantidadDerrotados;
     }
 
 
@@ -54,7 +53,7 @@ public class ReporteBatalla {
         return Objects.hash(nombreMiPokemon, nombreEnemigo);
     }
 }
-}
+
 
 
 
